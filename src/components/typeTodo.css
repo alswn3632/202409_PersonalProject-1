@@ -1,0 +1,90 @@
+/* 종류별 투두리스트 출력 */
+
+.typeTodo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 10px 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.typeTodo>.typeName{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: rgba(185, 185, 185, 0.5);
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.typeTodo>.typeValue{
+    height: 30px;
+    margin-bottom: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.typeTodo>.typeValue>.box3{
+    display: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+}
+
+.typeTodo>.typeValue>.box3:hover{
+    font-weight: bold;
+    content : "삭제";
+}
+
+.typeTodo>.typeValue:hover >.box3{
+    display: block;
+}
+
+/* 참고 사이트 https://hongbyul.tistory.com/entry/input-%EC%B2%B4%ED%81%AC%EB%B0%95%EC%8A%A4-CSS-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0 */
+/* input 숨겨준다 */
+.typeTodo>.typeValue>input{
+    display:none;
+}
+  
+.typeTodo>.typeValue>input + label{
+    cursor:pointer;
+}
+  
+/* label:before에 체크하기 전 상태 CSS */
+.typeTodo>.typeValue> input + label:before{
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    border:2px solid #93b3d2;
+    border-radius: 4px;
+    vertical-align:middle;
+    margin-right: 7px;
+}
+    
+/* label:before에 체크 된 상태 CSS */  
+.typeTodo>.typeValue>input:checked + label:before{
+    content:"";
+    background-color:#93b3d2;
+    border-color:#93b3d2;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.typeTodo>.typeValue>label{
+    display: block;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,31 @@
+/* 상단 입력 받는 input 태그 관련 */
+
+.pbox{
+    width: 350px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.pbox>.box1{
+    border: none;
+    outline: none;
+}
+
+.pbox>.box2{
+    width: 200px;
+    border: none;
+    outline: none;
+}
+
+.pbox>.box3{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+

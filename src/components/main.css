@@ -1,0 +1,74 @@
+/* 투두리스트 메인페이지 + 부모 */
+
+@font-face {
+    font-family: "myfont";
+    font-weight: normal;
+    src: url("../font/나눔스퀘어라운드/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundR.ttf") format("truetype");
+  }
+
+.main{
+    width: 400px;
+    height: 720px;
+    margin: 0 auto;
+    margin-top: 45px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    font-family: "myfont";
+}
+
+.main>.headBox{
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.main>.sysBox{
+    width: 350px;
+    height: 25px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main>.sysBox>.box1{
+    font-size: 15px;
+}
+
+.main>.sysBox>.box2{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+}
+
+.mainBox{
+    width: 350px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.mainBox::-webkit-scrollbar {
+    display: none;
+    width: 15px;
+    /* 스크롤바가 미관상 맘에 들지 않아 삭제함 */
+}
+   
+/* .mainBox::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+}
+   
+.mainBox::-webkit-scrollbar-thumb {
+    background: #c0c0c07e; 
+    border-radius: 20px;
+} */
