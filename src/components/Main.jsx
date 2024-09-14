@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import CreateTodo from './CreateTodo';
-import PrintTodo from './PrintTodo';
 import TypeTodo from './TypeTodo';
 import './main.css'
 import SystemSet from './SystemSet';
@@ -39,7 +38,7 @@ const Main = () => {
     ])
 
     //카테고리 초기값
-    const [typeList, setTypeList] = useState(['중요','할일','약속','공부','운동','기타'])
+    const [typeList, setTypeList] = useState(['중요','할일','약속','공부','운동'])
 
     //카테고리 생성기능 - input 값 받아오기
     const [type2, setType2] = useState('')
@@ -118,6 +117,22 @@ const Main = () => {
         setTodos(todos.filter(todo => todo.id != id));
     }
 
+    //리스트 수정기능
+    const onEdit = (id) => {
+        const edit = prompt("변경 사항을 입력해주세요");
+
+        setTodos(
+            todos.map(todo => (
+                todo.id === id?
+                {
+                    ...todo,
+                    content : edit
+                }
+                : todo
+            ))
+        );
+    }
+
     //리스트 완료체크
     const onToggle = (id) => {
         setTodos(
@@ -151,7 +166,7 @@ const Main = () => {
             <div className='mainBox'>
                 {
                     typeList.map(p=>(
-                        <TypeTodo mytype={p} typeList={typeList} todos={todos} onRemove={onRemove} onToggle={onToggle} onRemove2={onRemove2}/> 
+                        <TypeTodo mytype={p} typeList={typeList} todos={todos} onRemove={onRemove} onToggle={onToggle} onRemove2={onRemove2} onEdit={onEdit}/> 
                     ))
                 }
             </div>

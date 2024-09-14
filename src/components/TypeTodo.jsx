@@ -1,7 +1,7 @@
 import React from 'react';
 import './typeTodo.css'
 
-const TypeTodo = ({mytype, typeList, todos, onRemove, onToggle, onRemove2}) => {
+const TypeTodo = ({mytype, typeList, todos, onRemove, onToggle, onRemove2, onEdit}) => {
 
     const newTodos = todos.filter(t => t.type === mytype);
 
@@ -36,7 +36,8 @@ const TypeTodo = ({mytype, typeList, todos, onRemove, onToggle, onRemove2}) => {
                     <input type="checkbox" id={`checkTodo${todo.id}`} onClick={()=>onToggle(todo.id)} checked={todo.active? true : false}/>
                     <label htmlFor={`checkTodo${todo.id}`}>{todo.content}</label>
                     {/* <span style={{cursor : 'pointer', textDecoration : todo.active? 'line-through' : 'none'}} onClick={()=>onToggle(todo.id)} className='box box2'>{todo.id}{todo.content}</span> */}
-                    <button onClick={() => onRemove(todo.id)} className='box box3'>☰</button>
+                    <button onClick={() => onEdit(todo.id)} className='box box3'>수정</button>
+                    <button onClick={() => onRemove(todo.id)} className='box box3'>삭제</button>
                 </div>
                 ))
             }
