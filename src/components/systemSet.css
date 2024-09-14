@@ -1,6 +1,4 @@
-/* 상단 입력 받는 input 태그 관련 */
-
-.pbox{
+.systemSet{
     width: 350px;
     height: 45px;
     display: flex;
@@ -10,25 +8,16 @@
     background-color: white;
 }
 
-.pbox>.box1{
-    width: 55px;
-    font-size: 15px;
-    border: none;
-    outline: none;
-}
-
-.pbox>.box2{
+.systemSet>.sys1{
     width: 200px;
     border: none;
     outline: none;
 }
 
-.pbox>.box3{
+.systemSet>.sys2{
     cursor: pointer;
     border: none;
     outline: none;
     background-color: transparent;
-    font-size: 15px;
-
 }
 

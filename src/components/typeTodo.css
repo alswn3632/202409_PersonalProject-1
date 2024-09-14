@@ -11,15 +11,33 @@
 }
 
 .typeTodo>.typeName{
+    display: inline-block;
     width: 70px;
     height: 30px;
     text-align: center;
     line-height: 30px;
-    background-color: rgba(185, 185, 185, 0.5);
+    background-color: rgba(222, 222, 222, 0.5);
     border-radius: 15px;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
+    padding: 0 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:unset;
+}
+
+.typeTodo>.typeName>span{
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    font-size: 15px;
+    color: transparent;
+}
+
+.typeTodo>.typeName>span:hover{
+    color: rgb(113, 113, 113);
 }
 
 .typeTodo>.typeValue{
@@ -43,7 +61,6 @@
 
 .typeTodo>.typeValue>.box3:hover{
     font-weight: bold;
-    content : "삭제";
 }
 
 .typeTodo>.typeValue:hover >.box3{
@@ -79,6 +96,55 @@
     border-color:#93b3d2;
     background-repeat: no-repeat;
     background-position: 50%;
+}
+
+.typeTodo>#typeA> input + label:before{
+    border-color: #ffcb21;
+}
+.typeTodo>#typeA>input:checked + label:before{
+    background-color:#ffcb21;
+}
+
+.typeTodo>#typeB> input + label:before{
+    border-color: #6FA2DB;
+}
+.typeTodo>#typeB>input:checked + label:before{
+    background-color:#6FA2DB;
+}
+
+.typeTodo>#typeC> input + label:before{
+    border-color: #FCB2CB;
+}
+.typeTodo>#typeC>input:checked + label:before{
+    background-color:#FCB2CB;
+}
+
+.typeTodo>#typeD> input + label:before{
+    border-color: #81939D;
+}
+.typeTodo>#typeD>input:checked + label:before{
+    background-color:#81939D;
+}
+
+.typeTodo>#typeE> input + label:before{
+    border-color: #95BA8b;
+}
+.typeTodo>#typeE>input:checked + label:before{
+    background-color: #95BA8b;
+}
+
+.typeTodo>#typeF> input + label:before{
+    border-color: #a8a8a8;
+}
+.typeTodo>#typeF>input:checked + label:before{
+    background-color:#a8a8a8;
+}
+
+.typeTodo>#typeG> input + label:before{
+    border-color: #62a3a8;
+}
+.typeTodo>#typeG>input:checked + label:before{
+    background-color:#62a3a8;
 }
 
 .typeTodo>.typeValue>label{
