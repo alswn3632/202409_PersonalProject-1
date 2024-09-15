@@ -3,6 +3,7 @@ import CreateTodo from './CreateTodo';
 import TypeTodo from './TypeTodo';
 import './main.css'
 import SystemSet from './SystemSet';
+import CompList from './CompList';
 
 const Main = () => {
 
@@ -26,12 +27,12 @@ const Main = () => {
             active : true       
         },{
             id : 4,
-            content : '5시 베테랑 CGV',
+            content : '베테랑2 5시 CGV',
             type : '약속',
             active : false        
         },{
             id : 5,
-            content : '멍뭉이랑 산책 1시간',
+            content : '멍뭉이 산책 1시간',
             type : '운동',
             active : false        
         }
@@ -150,6 +151,9 @@ const Main = () => {
     //리스트 완료퍼센트
     const cntActive = ((todos.filter(todo=> todo.active).length) / todos.length * 100).toFixed(0)
 
+    //미완료, 완료 구분으로 보기
+    const [version, setVersion] = useState(false);
+
     return (
         <div className='main'>
             <div className='headBox'>TODOLIST</div>
@@ -160,14 +164,22 @@ const Main = () => {
 
             <div className='sysBox'>
                 <div className='box1'>오늘의 달성률 : {cntActive}%</div>
+                <button className='box2' onClick={()=>{version === true ? setVersion(false) : setVersion(true)}}>표시</button>
                 <button className='box2' onClick={()=>{modal === true ? setModal(false) : setModal(true)}}>설정</button>
             </div>
 
             <div className='mainBox'>
                 {
+                    version === false?
                     typeList.map(p=>(
                         <TypeTodo mytype={p} typeList={typeList} todos={todos} onRemove={onRemove} onToggle={onToggle} onRemove2={onRemove2} onEdit={onEdit}/> 
                     ))
+                    : null
+                }
+                {
+                    version === true?
+                    <CompList todos={todos} onRemove={onRemove} onToggle={onToggle} onEdit={onEdit}/>
+                    : null
                 }
             </div>
         </div>
