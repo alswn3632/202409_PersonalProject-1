@@ -1,4 +1,4 @@
-# 😊안녕하세요! 리액트를 이용해 투두리스트를 만들어보았습니다!
+# 😊안녕하세요!<br>  리액트를 이용해 투두리스트를 만들어보았습니다!
 ## 🔧 Stack
 ![Semantic UI React](https://img.shields.io/badge/Semantic%20UI%20React-%2335BDB2.svg?style=for-the-badge&logo=SemanticUIReact&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
