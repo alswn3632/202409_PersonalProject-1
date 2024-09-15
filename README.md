@@ -1,4 +1,4 @@
-# ✏️안녕하세요! 리액트로 투두리스트를 만들어보았습니다!✏️
+# 😊안녕하세요! 리액트를 이용해 투두리스트를 만들어보았습니다!
 ## 🔧 Stack
 ![Semantic UI React](https://img.shields.io/badge/Semantic%20UI%20React-%2335BDB2.svg?style=for-the-badge&logo=SemanticUIReact&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -12,16 +12,22 @@
 - 리액트를 처음 배울 때 대표적인 과제인 투두리스트를 만들어보았습니다.
 - 기존의 투두리스트 기본 기능인 일정 추가, 삭제, 완료체크 외에 카테고리, 일정 수정등의 기능을 추가했습니다.
 - 어플 투두메이트를 참고하여 사용자가 직접 카테고리를 추가하거나 조작할 수 있도록 만들었습니다.
-- 앞서 말한 카테고리와 출력 방식을 두 가지로 나누어 기존의 투두리스트와 차별성을 두었습니다.
+- 앞서 말한 카테고리, 두 가지로 나눈 출력 방식을 통해 기존의 투두리스트와 차별성을 두었습니다.
 
 ## ⭐ Main Feature
+### 투두리스트 기본 기능
+- 일정 추가, 수정, 삭제, 완료 체크 등 기본적인 투두리스트 기능을 만들었습니다.
+- 일정 추가할 때 내용이 없다면 알림창과 함께 반려되도록 하였습니다.
+  
 ### 카테고리 조작
+![출력 양식 내용1](https://github.com/user-attachments/assets/99f29dd0-80ea-4392-949a-8a3b052783b4)
+![카테고리 내용2](https://github.com/user-attachments/assets/6b3b6f3e-42f1-4eed-9e8d-5431b0cff464)
 - 일정을 입력할 때 사용자가 카테고리를 설정할 수 있습니다.
 - 초기에 주어진 카테고리 외에 사용자가 직접 카테고리를 생성할 수 있고, 일정 추가할 때 반영됩니다.
 - 사용자가 카테고리를 삭제할 수 있습니다. 삭제 시 해당 카테고리의 일정이 같이 삭제된다는 알림을 띄웁니다.
 
 ### 출력방식 선택
-![메인사진 완료버전](https://github.com/user-attachments/assets/cf644e93-a538-4481-adeb-7b7c6481f4bf)
+![카테고리 내용1](https://github.com/user-attachments/assets/300f8b83-c7ea-44c0-bc2c-cd0544e8393f)
 - 두 가지 버전의 출력 형식을 제공하고, 상단의 '표시' 버튼을 통해 조작할 수 있습니다.
 - 첫번째는 카테고리별로 그룹화 되어 출력됩니다. 카테고리별로 색상을 통일하였습니다.
 - 두번째는 진행/완성으로 나누어 출력됩니다. 진행중인 일정을 체크하면 완료된 일정으로 이동됩니다.  
