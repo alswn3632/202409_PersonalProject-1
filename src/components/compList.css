@@ -43,7 +43,7 @@
 .compList>.typeValue{
     height: 30px;
     margin-bottom: 5px;
-    padding: 5px;
+    /* padding: 5px; */
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -67,16 +67,41 @@
     display: block;
 }
 
-.compList>.typeValue>input{
+.compList>.typeValue>.checkBox{
+    /* width: 230px; */
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+
+.compList>.typeValue>.checkBox>input{
+    cursor: pointer;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.compList>.typeValue>.checkBox>label{
+    cursor: pointer;
+    display: block;
+    width: 195px;
+    /* padding-top: 2px; */
+    text-align: start;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* .compList>.typeValue>input{
     display:none;
 }
   
 .compList>.typeValue>input + label{
     cursor:pointer;
 }
-  
-/* label:before에 체크하기 전 상태 CSS */
-.compList>.typeValue> input + label:before{
+   */
+/* .compList>.typeValue> input + label:before{
     content:"";
     display:inline-block;
     width:17px;
@@ -87,7 +112,6 @@
     margin-right: 7px;
 }
     
-/* label:before에 체크 된 상태 CSS */  
 .compList>.typeValue>input:checked + label:before{
     content:"";
     background-color:#93b3d2;
@@ -102,4 +126,4 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
+} */

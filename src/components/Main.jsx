@@ -37,39 +37,66 @@ const Main = () => {
             active : false        
         }
     ])
-
+    // #95BA8b, #6FA2DB, #FCB2CB, #81939D, #FBCD35
     //카테고리 초기값
-    const [typeList, setTypeList] = useState(['중요','할일','약속','공부','운동'])
+    const [typeList, setTypeList] = useState([
+        {
+            title: '중요',
+            color: '#FBCD35'
+        },{
+            title: '할일',
+            color: '#95BA8b'
+        },{
+            title: '약속',
+            color: '#FCB2CB'
+        },{
+            title: '공부',
+            color: '#6FA2DB'
+        },{
+            title: '운동',
+            color: '#81939D'
+        },
+    ])
 
     //카테고리 생성기능 - input 값 받아오기
-    const [type2, setType2] = useState('')
+    const [type2, setType2] = useState({
+        title : '',
+        color : ''
+    })
+
+    const {title,color} = type2;
 
     const onChange2 = (e) => {
-        setType2(e.target.value);
+        const {name,value} = e.target;
+        setType2({
+            ...type2,
+            [name] : value
+        });
     }
 
     const onCreate2 = () => {
-        if(type2 === ''){
-            window.alert("내용을 입력해주세요.")
-        }else{
-            setTypeList((typeList.concat(type2)));
-        }
-        setType2('');
+        const newType = {
+            title : title,
+            color : color
+        };
+        
+        setTypeList((typeList.concat(newType)));
+
+        setType2({title:'',color:''});
     }
 
     //카테고리 생성기능 - 모달창 구현
     const [modal, setModal] = useState(false);
 
-
     //카테고리 삭제기능
     const onRemove2 = (a) => {
         if(todos.filter(todo => todo.type === a).length){
             if(window.confirm("카테고리에 포함된 내용도 같이 삭제됩니다.\n그래도 삭제하시겠습니까?")){
-                setTypeList(typeList.filter(t => t != a));
+                setTypeList(typeList.filter(t => t.title != a));
                 setTodos(todos.filter(todo => todo.type != a));
             }
         }else{
-            setTypeList(typeList.filter(t => t != a));
+            setTypeList(typeList.filter(t => t.title != a));
             setTodos(todos.filter(todo => todo.type != a));
         }
     }
@@ -77,7 +104,7 @@ const Main = () => {
     //리스트 생성기능 - input값 받아오기
     const [inputs, setInputs] = useState({
         content : '',
-        type : typeList[0]
+        type : typeList[0].title
     })
 
     const {content,type} = inputs;
@@ -110,7 +137,7 @@ const Main = () => {
 
             nextId.current += 1;
         }
-        setInputs({content:'',type:typeList[0]});
+        setInputs({content:'',type:typeList[0].title});
     }
 
     //리스트 삭제기능
@@ -131,7 +158,7 @@ const Main = () => {
                 }
                 : todo
             ))
-        );
+        );  
     }
 
     //리스트 완료체크
@@ -159,7 +186,8 @@ const Main = () => {
             <div className='headBox'>TODOLIST</div>
 
             {
-                modal === true? <SystemSet type2={type2} onChange2={onChange2} onCreate2={onCreate2}/> : <CreateTodo typelist={typeList} content={content} type={type} onChange={onChange} onCreate={onCreate}/>
+                modal === true? <SystemSet title={title} color={color} onChange2={onChange2} onCreate2={onCreate2}/> 
+                : <CreateTodo typeList={typeList} content={content} type={type} onChange={onChange} onCreate={onCreate}/>
             }
 
             <div className='sysBox'>

@@ -3,21 +3,31 @@
     height: 45px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 10px;
     box-sizing: border-box;
     background-color: white;
 }
 
 .systemSet>.sys1{
+    width: 45px;
+    height: 25px;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+}
+
+.systemSet>.sys2{
     width: 200px;
     border: none;
     outline: none;
 }
 
-.systemSet>.sys2{
+.systemSet>.sys3{
     cursor: pointer;
     border: none;
     outline: none;
     background-color: transparent;
+    font-size: 15px;
 }
 

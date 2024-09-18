@@ -12,8 +12,10 @@ const CompList = ({todos, onRemove, onToggle, onEdit}) => {
             {
                 comp2.map(todo=>(
                 <div className="typeValue">
-                    <input type="checkbox" id={`checkTodo${todo.id}`} onClick={()=>onToggle(todo.id)} checked={todo.active? true : false}/>
-                    <label htmlFor={`checkTodo${todo.id}`}>{todo.content}</label>
+                    <div className='checkBox'>
+                        <input type="checkbox" id={`checkTodo${todo.id}`} style={{accentColor:'#93b3d2'}} onClick={()=>onToggle(todo.id)} checked={todo.active? true : false}/>
+                        <label htmlFor={`checkTodo${todo.id}`}>{todo.content}</label>
+                    </div>
                     <button onClick={() => onEdit(todo.id)} className='box box3'>수정</button>
                     <button onClick={() => onRemove(todo.id)} className='box box3'>삭제</button>
                 </div>
@@ -23,8 +25,10 @@ const CompList = ({todos, onRemove, onToggle, onEdit}) => {
             {
                 comp1.map(todo=>(
                 <div className="typeValue">
-                    <input type="checkbox" id={`checkTodo${todo.id}`} onClick={()=>onToggle(todo.id)} checked={todo.active? true : false}/>
-                    <label htmlFor={`checkTodo${todo.id}`}>{todo.content}</label>
+                    <div className='checkBox'>
+                        <input type="checkbox" id={`checkTodo${todo.id}`} style={{accentColor:'#93b3d2'}} onClick={()=>onToggle(todo.id)} checked={todo.active? true : false}/>
+                        <label htmlFor={`checkTodo${todo.id}`}>{todo.content}</label>
+                    </div>
                     <button onClick={() => onEdit(todo.id)} className='box box3'>수정</button>
                     <button onClick={() => onRemove(todo.id)} className='box box3'>삭제</button>
                 </div>
