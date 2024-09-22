@@ -92,12 +92,12 @@ const Main = () => {
     const onRemove2 = (a) => {
         if(todos.filter(todo => todo.type === a).length){
             if(window.confirm("카테고리에 포함된 내용도 같이 삭제됩니다.\n그래도 삭제하시겠습니까?")){
-                setTypeList(typeList.filter(t => t.title != a));
-                setTodos(todos.filter(todo => todo.type != a));
+                setTypeList(typeList.filter(t => t.title !== a));
+                setTodos(todos.filter(todo => todo.type !== a));
             }
         }else{
-            setTypeList(typeList.filter(t => t.title != a));
-            setTodos(todos.filter(todo => todo.type != a));
+            setTypeList(typeList.filter(t => t.title !== a));
+            setTodos(todos.filter(todo => todo.type !== a));
         }
     }
 
@@ -142,7 +142,7 @@ const Main = () => {
 
     //리스트 삭제기능
     const onRemove = (id) => {
-        setTodos(todos.filter(todo => todo.id != id));
+        setTodos(todos.filter(todo => todo.id !== id));
     }
 
     //리스트 완료체크
@@ -169,25 +169,20 @@ const Main = () => {
     const onEdit = (id) => {
         const edit = prompt("변경 사항을 입력해주세요");
 
-        setTodos(
-            todos.map(todo => (
-                todo.id === id?
-                {
-                    ...todo,
-                    content : edit
-                }
-                : todo
-            ))
-        );  
-    }    
-
-    //수정기능 - input 태그 추가
-    const onChange3 = (e) => {
-        const {name,value} = e.target;
-        setInput3({
-            ...input3,
-            [name] : value
-        });
+        if(edit === ''){
+            return;
+        }else{
+            setTodos(
+                todos.map(todo => (
+                    todo.id === id?
+                    {
+                        ...todo,
+                        content : edit
+                    }
+                    : todo
+                ))
+            );  
+        }
     }
 
     return (
@@ -209,7 +204,7 @@ const Main = () => {
                 {
                     version === false?
                     typeList.map(p=>(
-                        <TypeTodo mytype={p} typeList={typeList} todos={todos} onRemove={onRemove} onToggle={onToggle} onRemove2={onRemove2} onEdit={onEdit} onChange3={onChange3}/> 
+                        <TypeTodo mytype={p} typeList={typeList} todos={todos} onRemove={onRemove} onToggle={onToggle} onRemove2={onRemove2} onEdit={onEdit}/> 
                     ))
                     : null
                 }

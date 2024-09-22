@@ -15,11 +15,9 @@ const TypeTodo = ({mytype, todos, onRemove, onToggle, onRemove2, onEdit, onChang
                 <div className="typeValue">
                     <div className='checkBox'>
                     <input type="checkbox" id={`checkTodo${todo.id}`} style={{accentColor:`${mytype.color}`}} onClick={()=>onToggle(todo.id)} checked={todo.active? true : false}/>
-                    <label htmlFor={`checkTodo${todo.id}`} className='label' style={{display:'none'}}>{todo.content}</label>
-                    <input type="text" name="content" value={todo.content} onChange={onChange3} className='label'/>
+                    <label htmlFor={`checkTodo${todo.id}`} className='label'>{todo.content}</label>
                     </div>
                     <button onClick={() => onEdit(todo.id)} className='box box3'>수정</button>
-                    <button onClick={() => onEdit(todo.id)} className='box box3'>저장</button>
                     <button onClick={() => onRemove(todo.id)} className='box box3'>삭제</button>
                 </div>
                 ))
