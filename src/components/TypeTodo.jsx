@@ -1,7 +1,7 @@
 import React from 'react';
 import './typeTodo.css'
 
-const TypeTodo = ({mytype, typeList, todos, onRemove, onToggle, onRemove2, onEdit}) => {
+const TypeTodo = ({mytype, todos, onRemove, onToggle, onRemove2, onEdit, onChange3}) => {
 
     const newTodos = todos.filter(t => t.type === mytype.title);
 
@@ -9,15 +9,17 @@ const TypeTodo = ({mytype, typeList, todos, onRemove, onToggle, onRemove2, onEdi
 
     return (
         <div className='typeTodo'>
-            <div className='typeName' style={{color:`${mytype.color}`}}>{mytype.title} <span onClick={()=>onRemove2(mytype.title)}>☰</span></div>
+            <div className='typeName' style={{color:`${mytype.color}`}}>{mytype.title}<span onClick={()=>onRemove2(mytype.title)}>☰</span></div>
             {
                 newTodos.map(todo=>(
                 <div className="typeValue">
                     <div className='checkBox'>
                     <input type="checkbox" id={`checkTodo${todo.id}`} style={{accentColor:`${mytype.color}`}} onClick={()=>onToggle(todo.id)} checked={todo.active? true : false}/>
-                    <label htmlFor={`checkTodo${todo.id}`}>{todo.content}</label>
+                    <label htmlFor={`checkTodo${todo.id}`} className='label' style={{display:'none'}}>{todo.content}</label>
+                    <input type="text" name="content" value={todo.content} onChange={onChange3} className='label'/>
                     </div>
                     <button onClick={() => onEdit(todo.id)} className='box box3'>수정</button>
+                    <button onClick={() => onEdit(todo.id)} className='box box3'>저장</button>
                     <button onClick={() => onRemove(todo.id)} className='box box3'>삭제</button>
                 </div>
                 ))

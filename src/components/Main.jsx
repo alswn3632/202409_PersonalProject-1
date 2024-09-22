@@ -145,22 +145,6 @@ const Main = () => {
         setTodos(todos.filter(todo => todo.id != id));
     }
 
-    //리스트 수정기능
-    const onEdit = (id) => {
-        const edit = prompt("변경 사항을 입력해주세요");
-
-        setTodos(
-            todos.map(todo => (
-                todo.id === id?
-                {
-                    ...todo,
-                    content : edit
-                }
-                : todo
-            ))
-        );  
-    }
-
     //리스트 완료체크
     const onToggle = (id) => {
         setTodos(
@@ -181,6 +165,31 @@ const Main = () => {
     //미완료, 완료 구분으로 보기
     const [version, setVersion] = useState(false);
 
+    //리스트 수정기능
+    const onEdit = (id) => {
+        const edit = prompt("변경 사항을 입력해주세요");
+
+        setTodos(
+            todos.map(todo => (
+                todo.id === id?
+                {
+                    ...todo,
+                    content : edit
+                }
+                : todo
+            ))
+        );  
+    }    
+
+    //수정기능 - input 태그 추가
+    const onChange3 = (e) => {
+        const {name,value} = e.target;
+        setInput3({
+            ...input3,
+            [name] : value
+        });
+    }
+
     return (
         <div className='main'>
             <div className='headBox'>TODOLIST</div>
@@ -200,7 +209,7 @@ const Main = () => {
                 {
                     version === false?
                     typeList.map(p=>(
-                        <TypeTodo mytype={p} typeList={typeList} todos={todos} onRemove={onRemove} onToggle={onToggle} onRemove2={onRemove2} onEdit={onEdit}/> 
+                        <TypeTodo mytype={p} typeList={typeList} todos={todos} onRemove={onRemove} onToggle={onToggle} onRemove2={onRemove2} onEdit={onEdit} onChange3={onChange3}/> 
                     ))
                     : null
                 }

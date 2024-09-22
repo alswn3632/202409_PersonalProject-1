@@ -84,7 +84,7 @@
     margin-right: 5px;
 }
 
-.typeTodo>.typeValue>.checkBox>label{
+.typeTodo>.typeValue>.checkBox>.label{
     cursor: pointer;
     display: block;
     width: 195px;
